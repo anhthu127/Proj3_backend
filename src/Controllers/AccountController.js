@@ -1,5 +1,5 @@
 import { getCurrentDate } from "../libs/constants.js";
-import  MidAccount from "../Models/Middle/MidAccount.js"
+import MidAccount from "../Models/Middle/MidAccount.js"
 
 class AccountController {
     constructor() {
@@ -9,7 +9,7 @@ class AccountController {
     }
 
     loginAccount = (req, res) => {
-        account = req.body
+        const account = req.body
         return 0;
     }
     registAccount = (req, res) => {

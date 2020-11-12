@@ -13,31 +13,31 @@ const attributes = {
         defaultValue: Sequelize.UUIDV4
     },
     name: {
-        type: DataTypes.STRING(45),
-        allowNull: false
+        type: DataTypes.STRING(225),
+        allowNull: true
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     },
     author: {
         type: DataTypes.STRING(45),
-        allowNull: false
+        allowNull: true
     },
     link: {
         type: DataTypes.STRING(225),
-        allowNull: false
+        allowNull: true
     },
     image: {
         type: DataTypes.STRING(225),
-        allowNull: false
+        allowNull: true
     },
     category: {
         type: DataTypes.STRING(45),
         allowNull: true
     },
     preview_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(45),
         allowNull: true
     },
     character_movie_id: {

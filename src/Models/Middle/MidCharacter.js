@@ -1,25 +1,49 @@
 const { default: Charater } = require("../Core/Charater");
-
+const MidUniMovie = require("./MidUniMovie")
 class MidCharacter {
 
-    async NewCharater(request) {
+    NewCharater = async (data) => {
+        console.log(data);
         const isCheck = await Charater.findOne({
             where: {
-                name: request.name,
+                name: data.name,
+                dOb: data.dOb,
+                height: data.height,
+                gender: data.gender,
+                born_in: data.born_in,
             }
         })
+        console.log("isCkeck    ", isCheck);
         if (isCheck !== null) {
             throw new Error('Charater is exist!')
         }
-        const data = await Charater.create(request)
-        return data
+        await Charater.create(data)
+        const created = await Charater.findOne({
+            where: {
+                name: data.name,
+                dOb: data.dOb,
+                height: data.height,
+                gender: data.gender,
+                born_in: data.born_in,
+            }
+        })
+        return created
     }
+
 
     async ListCharacter() {
         const response = await Charater.findAll()
 
-        if(response.data)
+        return response
+
     }
+
+    async EditCharater(data) {
+        const response = await Charater.update(data)
+
+        return response
+    }
+
 }
 
 export default new MidCharacter();

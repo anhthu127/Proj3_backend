@@ -13,22 +13,32 @@ const attributes = {
         defaultValue: Sequelize.UUIDV4
     },
     name: {
-        type: Sequelize.STRING(45)
+        type: Sequelize.STRING(225),
+        allowNull: false
     },
     image: {
-        type: Sequelize.STRING(45)
+        type: Sequelize.STRING(225),
+        allowNull: true
     },
     dOb: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: true
     },
-    hometown: {
-        type: Sequelize.STRING(225)
+    born_in: {
+        type: Sequelize.STRING(225),
+        allowNull: true
     },
-    spouse: {
-        type: Sequelize.STRING(225)
+    gender: {
+        type: Sequelize.UUID,
+        allowNull: false
     },
     height: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    description: {
+        type: Sequelize.TEXT,
+        allowNull: true
     },
     createdAt: {
         allowNull: false,

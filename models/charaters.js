@@ -14,37 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   charaters.init({
-    id: {
-      primaryKey: true,
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4
-    },
-    name: {
-      type: Sequelize.STRING(45)
-    },
-    image: {
-      type: Sequelize.STRING(45)
-    },
-    dOb: {
-      type: Sequelize.DATE
-    },
-    hometown: {
-      type: Sequelize.STRING(225)
-    },
-    spouse: {
-      type: Sequelize.STRING(225)
-    },
-    height: {
-      type: Sequelize.INTEGER
-    },
-    createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE
-    }
+    name: DataTypes.STRING,
+    image: DataTypes.STRING,
+    dOb: DataTypes.DATE,
+    born_in: DataTypes.STRING,
+    gender: DataTypes.INTEGER,
+    height: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'charaters',

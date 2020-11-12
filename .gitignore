@@ -1,9 +1,6 @@
-
-
-
-
 *.env
 logs/*
 /node_modules/
 /build/
-**/migrations
+/migrations/
+/abc/

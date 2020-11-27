@@ -3,7 +3,8 @@ import express, { Router } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { isIP } from 'net';
- import rootRouter from './src/Routers/index.js';
+import auth from './src/Routers/auth.js'
+import rootRouter from './src/Routers/index.js';
 
 
 const app = express();
@@ -44,8 +45,10 @@ app.use((req, res, next) => {
 });
 app.use('/api', rootRouter);
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
-
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../build', 'index.html'));
+// });
+app.listen(3003, () => {
+    console.log(`Example app listening at http://localhost:3003`)
+})
 export default app;

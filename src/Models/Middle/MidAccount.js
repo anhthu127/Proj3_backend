@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { generateToken } from "../../libs/token.js"
->>>>>>> 63987b55fb327d250f7adba015d39cd1720c54a6
 import Account from "../Core/Account.js"
 import User from "../Core/User.js"
 
@@ -14,12 +11,6 @@ class MidAccount {
                 password: request.password
             }
         })
-<<<<<<< HEAD
-
-        if (account != null) {
-
-        }
-=======
         console.log(account);
         if (account === null) {
             throw new Error("Account is not exist")
@@ -31,7 +22,6 @@ class MidAccount {
             return await generateToken(data)
         }
 
->>>>>>> 63987b55fb327d250f7adba015d39cd1720c54a6
     }
 
     register = async (request) => {
@@ -45,21 +35,6 @@ class MidAccount {
         })
 
         if (isChecked != null) {
-<<<<<<< HEAD
-            return ('Account is exist')
-        } else {
-            user = {
-                email: request.email,
-                phone: request.phone,
-                name: request.name,
-                location: request.location,
-                city: request.city,
-                district: request.district,
-                create_at: request.create_at
-
-            }
-            User.create(user)
-=======
             throw new Error("Account is exist!")
         } else {
             const data = {
@@ -75,28 +50,10 @@ class MidAccount {
             }
             const created = await User.create(data)
             // console.log("-----   CREATED        " + JSON.stringify(created));
->>>>>>> 63987b55fb327d250f7adba015d39cd1720c54a6
             const user = await User.findOne({
                 where: {
                     email: request.email,
                     phone: request.phone,
-<<<<<<< HEAD
-
-                }
-            })
-            const account = {
-                username: request.username,
-                password: request.password,
-                email: request.email,
-                phone: request.phone,
-                create_at: request.create_at,
-                user_id: user.user_id
-            }
-            Account.create(account)
-        }
-
-
-=======
                 }
             })
             if (user != null) {
@@ -114,7 +71,6 @@ class MidAccount {
 
 
         }
->>>>>>> 63987b55fb327d250f7adba015d39cd1720c54a6
     }
 }
 export default new MidAccount()

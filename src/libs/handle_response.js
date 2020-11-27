@@ -16,11 +16,7 @@ export function Response(handle) {
                     data: data
                 });
             }
-<<<<<<< HEAD
             
-=======
-
->>>>>>> 63987b55fb327d250f7adba015d39cd1720c54a6
         } catch (err) {
             let message = err.message
             return res.send({

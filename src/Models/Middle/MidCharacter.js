@@ -18,7 +18,9 @@ class MidCharacter {
     async ListCharacter() {
         const response = await Charater.findAll()
 
-        if(response.data)
+        if (response.data) {
+
+        }
     }
 }
 

@@ -3,3 +3,6 @@ logs/*
 /node_modules/
 /build/
 /migrations/
+/models/
+
+/media/

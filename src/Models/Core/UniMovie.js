@@ -1,10 +1,10 @@
-import { Sequelize, DataTypes, UUIDV4, } from "sequelize";
+import { DataTypes, Sequelize, UUIDV4 } from "sequelize";
 import BaseModel from "./BaseModel";
 import sequelize from '../../connections/sequelize'
+export default class UniMovie extends BaseModel {
+    static association() {
 
-export default class Episode extends BaseModel {
-    static association()
-
+    }
 }
 
 const attributes = {
@@ -17,32 +17,26 @@ const attributes = {
         type: DataTypes.STRING(225),
         allowNull: false
     },
+    charater_id: {
+        type: DataTypes.UUID,
+        allowNull: false
+    },
     movie_id: {
         type: DataTypes.UUID,
-        allowNull: false
-    },
-    seasion_id: {
-        type: DataTypes.UUID,
-        allowNull: false
-    },
-    rate: {
-        type: DataTypes.INTEGER,
         allowNull: true
-    },
-    like: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    },
+    }
+
 }
+
 function beforeCreate() {
-    Episode.beforeCreate((obj, __) => {
+    Seasion.beforeCreate((obj, __) => {
         return obj.id = UUIDV4()
     })
 }
 
 const options = {
-    tableName: 'episodes',
+    tableName: 'uni_movies',
     beforeCreate: beforeCreate
 }
 
-Episode.init(attributes, { ...options, sequelize })
+UniMovie.init(attributes, { ...options, sequelize })
